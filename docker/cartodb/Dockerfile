@@ -2,7 +2,7 @@ FROM cartobase:latest
 
 WORKDIR /carto
 
-ENV CARTO_CARTODB_REPO https://github.com/CartoDB/cartodb.git
+ENV CARTO_CARTODB_REPO https://github.com/devloic/cartodb.git
 
 ARG CARTODB_VERSION
 ENV CARTODB_VERSION=$CARTODB_VERSION
