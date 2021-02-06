@@ -11,7 +11,7 @@ output_message "Script starting"
 
 export DEBIAN_FRONTEND="noninteractive"
 export PG_MAJOR="10"
-export PG_VERSION="10.12-1.pgdg90+1"
+export PG_VERSION="10.15-1.pgdg90+1"
 export PYTHONDONTWRITEBYTECODE=1
 
 DPKG_ARCH="$(dpkg --print-architecture)"
