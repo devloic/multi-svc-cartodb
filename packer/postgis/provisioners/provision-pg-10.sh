@@ -123,7 +123,7 @@ apt-get install lsb-core
 sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
 # Import the repository signing key:
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 
 # Update the package lists:
 apt-get update
@@ -135,7 +135,7 @@ apt-get -y install postgresql
 
 PG_CREATE_CLUSTER_FILE="/etc/postgresql-common/createcluster.conf"
 sed -ri 's/#(create_main_cluster) .*$/\1 = false/' $PG_CREATE_CLUSTER_FILE
-apt-get install -y --allow-unauthenticated "postgresql-$PG_MAJOR=$PG_VERSION"
+apt-get install -y  "postgresql-$PG_MAJOR=$PG_VERSION"
 
 output_message "Configuring installed PostgreSQL packages"
 
