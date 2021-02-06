@@ -21,7 +21,7 @@
             "changes": [
                 "ENTRYPOINT [\"/usr/local/bin/startup.sh\"]",
                 "CMD [\"postgres\"]",
-                "ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/10/bin"
+                "ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/12/bin"
             ]
         }
     ],
