@@ -117,7 +117,7 @@ PG_APT_FILE="/etc/apt/sources.list.d/pgdg.list"
 #apt-get update
 
 #apt-get install -y --allow-unauthenticated postgresql-common
-apt-get install lsb_release
+apt-get install lsb-core
 
 # Create the file repository configuration:
 sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
