@@ -2,7 +2,7 @@ FROM cartobase:latest
 
 WORKDIR /carto
 
-ENV SQLAPI_REPO https://github.com/CartoDB/CartoDB-SQL-API.git
+ENV SQLAPI_REPO https://github.com/devloic/CartoDB-SQL-API.git
 
 ARG SQLAPI_VERSION
 
