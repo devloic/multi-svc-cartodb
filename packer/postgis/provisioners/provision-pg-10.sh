@@ -10,8 +10,8 @@ function output_message() {
 output_message "Script starting"
 
 export DEBIAN_FRONTEND="noninteractive"
-export PG_MAJOR="10"
-export PG_VERSION="10.15-1.pgdg90+1"
+export PG_MAJOR="11"
+export PG_VERSION="11.10-1.pgdg90+1"
 export PYTHONDONTWRITEBYTECODE=1
 
 DPKG_ARCH="$(dpkg --print-architecture)"
@@ -130,7 +130,7 @@ apt-get update
 
 # Install the latest version of PostgreSQL.
 # If you want a specific version, use 'postgresql-12' or similar instead of 'postgresql':
-apt-get -y install postgresql-server-dev-10
+apt-get -y install postgresql-server-dev-11
 #lolo end
 
 PG_CREATE_CLUSTER_FILE="/etc/postgresql-common/createcluster.conf"
