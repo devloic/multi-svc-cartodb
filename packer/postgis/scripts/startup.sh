@@ -76,7 +76,7 @@ if [ "$1" = 'postgres' ]; then
 		if [ "$POSTGRES_INITDB_WALDIR" ]; then
 			export POSTGRES_INITDB_ARGS="$POSTGRES_INITDB_ARGS --waldir $POSTGRES_INITDB_WALDIR"
 		fi
-		locate postgres.bki
+		
 		eval '/usr/lib/postgresql/12/bin/initdb --username="$POSTGRES_USER" --encoding=UTF8 --locale=en_US.utf8 --pwfile=<(echo "$POSTGRES_PASSWORD") '"$POSTGRES_INITDB_ARGS"
 
 		# unset/cleanup "nss_wrapper" bits
