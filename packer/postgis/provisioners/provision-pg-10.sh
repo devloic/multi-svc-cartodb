@@ -11,7 +11,7 @@ output_message "Script starting"
 
 export DEBIAN_FRONTEND="noninteractive"
 export PG_MAJOR="12"
-export PG_VERSION="12.2-1.pgdg90+1"
+#export PG_VERSION="12.2-1.pgdg90+1"
 export PYTHONDONTWRITEBYTECODE=1
 
 DPKG_ARCH="$(dpkg --print-architecture)"
@@ -135,7 +135,7 @@ apt-get -y install postgresql-server-dev-12
 
 PG_CREATE_CLUSTER_FILE="/etc/postgresql-common/createcluster.conf"
 sed -ri 's/#(create_main_cluster) .*$/\1 = false/' $PG_CREATE_CLUSTER_FILE
-apt-get install -y  "postgresql-$PG_MAJOR=$PG_VERSION"
+apt-get install -y  "postgresql-$PG_MAJOR"
 
 output_message "Configuring installed PostgreSQL packages"
 
@@ -175,7 +175,7 @@ echo "export LANG=\"${LANG}\"" >> $ENV_SCRIPT
 echo "export PATH=\"${PATH}\"" >> $ENV_SCRIPT
 echo "export PGDATA=\"${PGDATA}\"" >> $ENV_SCRIPT
 echo "export PG_MAJOR=\"${PG_MAJOR}\"" >> $ENV_SCRIPT
-echo "export PG_VERSION=\"${PG_VERSION}\"" >> $ENV_SCRIPT
+#echo "export PG_VERSION=\"${PG_VERSION}\"" >> $ENV_SCRIPT
 chmod 755 $ENV_SCRIPT
 
 output_message "Script finished"
