@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -Eeo pipefail
-locate initdb
+eval 'locate initdb'
 export PGDATA="${PGDATA:-/var/lib/postgresql/data}"
 export LANG="en_US.utf8"
 
