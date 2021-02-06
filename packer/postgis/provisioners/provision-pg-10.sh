@@ -130,7 +130,7 @@ apt-get update
 
 # Install the latest version of PostgreSQL.
 # If you want a specific version, use 'postgresql-12' or similar instead of 'postgresql':
-apt-get -y install postgresql
+apt-get -y install postgresql-server-dev-10
 #lolo end
 
 PG_CREATE_CLUSTER_FILE="/etc/postgresql-common/createcluster.conf"
