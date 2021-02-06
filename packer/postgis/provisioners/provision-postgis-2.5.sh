@@ -16,8 +16,8 @@ export PG_MAJOR="${PG_MAJOR:-11}"
 export PG_VERSION="${PG_VERSION:-11.10-1.pgdg90+1}"
 export PYTHONDONTWRITEBYTECODE=1
 
-export POSTGIS_MAJOR="3"
-export POSTGIS_VERSION="3.0.3+dfsg-2.pgdg90+1"
+export POSTGIS_MAJOR="2.5"
+export POSTGIS_VERSION="2.5.1+dfsg-1.pgdg90+1"
 
 output_message "Installing PostGIS packages"
 apt-get -qq update
