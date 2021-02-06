@@ -105,17 +105,34 @@ PG_APT_REPO="http://apt.postgresql.org/pub/repos/apt/"
 PG_APT_FILE="/etc/apt/sources.list.d/pgdg.list"
 
 # Retrieve and use key to auth PostgreSQL Debian repository
-export GNUPGHOME="$(mktemp -d)"
-gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$PG_DEB_KEY"
-gpg --batch --export "$PG_DEB_KEY" > /etc/apt/trusted.gpg.d/postgres.gpg
-command -v gpgconf > /dev/null && gpgconf --kill all
-rm -rf "$GNUPGHOME"
-apt-key list
+#lolo comments
+#export GNUPGHOME="$(mktemp -d)"
+#gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$PG_DEB_KEY"
+#gpg --batch --export "$PG_DEB_KEY" > /etc/apt/trusted.gpg.d/postgres.gpg
+#command -v gpgconf > /dev/null && gpgconf --kill all
+#rm -rf "$GNUPGHOME"
+#apt-key list
 
-echo "deb ${PG_APT_REPO} stretch-pgdg main $PG_MAJOR" > $PG_APT_FILE
-apt-get update
+#echo "deb ${PG_APT_REPO} stretch-pgdg main $PG_MAJOR" > $PG_APT_FILE
+#apt-get update
 
-apt-get install -y --allow-unauthenticated postgresql-common
+#apt-get install -y --allow-unauthenticated postgresql-common
+
+
+# Create the file repository configuration:
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+# Import the repository signing key:
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+# Update the package lists:
+sudo apt-get update
+
+# Install the latest version of PostgreSQL.
+# If you want a specific version, use 'postgresql-12' or similar instead of 'postgresql':
+sudo apt-get -y install postgresql
+#lolo end
+
 PG_CREATE_CLUSTER_FILE="/etc/postgresql-common/createcluster.conf"
 sed -ri 's/#(create_main_cluster) .*$/\1 = false/' $PG_CREATE_CLUSTER_FILE
 apt-get install -y --allow-unauthenticated "postgresql-$PG_MAJOR=$PG_VERSION"
