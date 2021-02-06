@@ -12,8 +12,8 @@ function output_message() {
 output_message "Script starting"
 
 export DEBIAN_FRONTEND="noninteractive"
-export PG_MAJOR="${PG_MAJOR:-10}"
-export PG_VERSION="${PG_VERSION:-10.15-1.pgdg90+1}"
+export PG_MAJOR="${PG_MAJOR:-11}"
+export PG_VERSION="${PG_VERSION:-11.10-1.pgdg90+1}"
 export PYTHONDONTWRITEBYTECODE=1
 
 export POSTGIS_MAJOR="3"
