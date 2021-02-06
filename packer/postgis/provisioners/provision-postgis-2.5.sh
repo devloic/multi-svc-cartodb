@@ -13,11 +13,11 @@ output_message "Script starting"
 
 export DEBIAN_FRONTEND="noninteractive"
 export PG_MAJOR="${PG_MAJOR:-10}"
-export PG_VERSION="${PG_VERSION:-10.10-1.pgdg90+1}"
+export PG_VERSION="${PG_VERSION:-10.15-1.pgdg90+1}"
 export PYTHONDONTWRITEBYTECODE=1
 
 export POSTGIS_MAJOR="2.5"
-export POSTGIS_VERSION="2.5.2+dfsg-1~exp1.pgdg90+1"
+export POSTGIS_VERSION="2.5.3+dfsg-2.pgdg90+1"
 
 output_message "Installing PostGIS packages"
 apt-get -qq update
@@ -28,7 +28,7 @@ apt-get install -y --allow-unauthenticated --no-install-recommends \
     postgresql-server-dev-$PG_MAJOR
 
 output_message "Installing plpython and plproxy PG extensions"
-apt-get install -y --allow-unauthenticated --no-install-recommends \
+apt-get install -y --no-install-recommends \
     postgresql-plpython-$PG_MAJOR \
     postgresql-$PG_MAJOR-plproxy
 
