@@ -67,7 +67,7 @@ output_message "Installing crankshaft version ${CRANKSHAFT_VERSION}"
 cd /carto/crankshaft
 git checkout $CRANKSHAFT_VERSION
 make install
-pip install --force-reinstall --no-cache-dir scikit-learn==0.17.0
+pip install --force-reinstall --no-cache-dir scikit-learn==0.24.1
 
 #### CARTODB PG EXTENSION ####################################################
 PGEXT_VERSION="${PGEXT_VERSION:-master}"
@@ -113,7 +113,7 @@ output_message "Installing Observatory extension, version $OBSERVATORY_VERSION"
 cd /carto/observatory-extension
 git checkout $OBSERVATORY_VERSION
 PGUSER=postgres make install
-cd /usr/share/postgresql/10/extension
+cd /usr/share/postgresql/12/extension
 if [[ -f ./observatory--dev.sql ]]; then
     cp ./observatory--dev.sql ./observatory--current--1.9.0.sql
 fi
