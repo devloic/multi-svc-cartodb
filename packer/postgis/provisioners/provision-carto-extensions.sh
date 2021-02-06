@@ -67,7 +67,7 @@ output_message "Installing crankshaft version ${CRANKSHAFT_VERSION}"
 cd /carto/crankshaft
 git checkout $CRANKSHAFT_VERSION
 make install
-pip install --force-reinstall --no-cache-dir scikit-learn==0.24.1
+pip install --force-reinstall --no-cache-dir scikit-learn==0.20.4
 
 #### CARTODB PG EXTENSION ####################################################
 PGEXT_VERSION="${PGEXT_VERSION:-master}"
