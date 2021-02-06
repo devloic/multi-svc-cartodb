@@ -16,15 +16,6 @@ export PYTHONDONTWRITEBYTECODE=1
 
 DPKG_ARCH="$(dpkg --print-architecture)"
 
-ENV_SCRIPT=/etc/profile.d/Z99_01_provision-pg-10.sh
-touch $ENV_SCRIPT
-echo "export LANG=\"${LANG}\"" >> $ENV_SCRIPT
-echo "export PATH=\"${PATH}\"" >> $ENV_SCRIPT
-echo "export PGDATA=\"${PGDATA}\"" >> $ENV_SCRIPT
-echo "export PG_MAJOR=\"${PG_MAJOR}\"" >> $ENV_SCRIPT
-echo "export PG_VERSION=\"${PG_VERSION}\"" >> $ENV_SCRIPT
-chmod 755 $ENV_SCRIPT
-exit
 #### INSTALL INITIAL DEPENDENCIES ############################################
 
 output_message "Installing initial dependencies"
