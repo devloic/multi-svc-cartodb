@@ -21,8 +21,7 @@ export POSTGIS_VERSION="3.0.1+dfsg-4.pgdg90+1"
 
 output_message "Installing PostGIS packages"
 apt-get -qq update
-apt-get install -y --allow-unauthenticated --no-install-recommends \
-    postgis=$POSTGIS_VERSION \
+apt-get install -y --no-install-recommends \
     postgresql-$PG_MAJOR-postgis-$POSTGIS_MAJOR=$POSTGIS_VERSION \
     postgresql-$PG_MAJOR-postgis-$POSTGIS_MAJOR-scripts=$POSTGIS_VERSION \
     postgresql-server-dev-$PG_MAJOR
