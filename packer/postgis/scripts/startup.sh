@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -Eeo pipefail
-eval 'locate initdb'
+
 export PGDATA="${PGDATA:-/var/lib/postgresql/data}"
 export LANG="en_US.utf8"
 
@@ -76,7 +76,7 @@ if [ "$1" = 'postgres' ]; then
 		if [ "$POSTGRES_INITDB_WALDIR" ]; then
 			export POSTGRES_INITDB_ARGS="$POSTGRES_INITDB_ARGS --waldir $POSTGRES_INITDB_WALDIR"
 		fi
-		eval 'initdb --username="$POSTGRES_USER" --encoding=UTF8 --locale=en_US.utf8 --pwfile=<(echo "$POSTGRES_PASSWORD") '"$POSTGRES_INITDB_ARGS"
+		eval '/usr/lib/postgresql/12/bin/initdb --username="$POSTGRES_USER" --encoding=UTF8 --locale=en_US.utf8 --pwfile=<(echo "$POSTGRES_PASSWORD") '"$POSTGRES_INITDB_ARGS"
 
 		# unset/cleanup "nss_wrapper" bits
 		if [ "${LD_PRELOAD:-}" = '/usr/lib/libnss_wrapper.so' ]; then
