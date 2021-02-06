@@ -1,6 +1,6 @@
 #!/bin/bash
 SCRIPT_NAME="provision-pg-10.sh"
-
+exit
 function output_message() {
     printf "**** PACKER PROVISIONER ($SCRIPT_NAME): "
     printf "$1"
