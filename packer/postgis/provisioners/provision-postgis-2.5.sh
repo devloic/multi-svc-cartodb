@@ -28,7 +28,7 @@ apt-get install -y --no-install-recommends \
 
 output_message "Installing plpython and plproxy PG extensions"
 apt-get install -y --no-install-recommends \
-    postgresql-plpython-$PG_MAJOR \
+    postgresql-plpython3-$PG_MAJOR \
     postgresql-$PG_MAJOR-plproxy
 
 #### ADDING ENV VARIABLES TO PROFILE SCRIPT ##################################
