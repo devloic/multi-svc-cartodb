@@ -2,7 +2,7 @@ FROM cartobase:latest
 
 WORKDIR /carto
 
-ENV WINDSHAFT_REPO https://github.com/CartoDB/Windshaft-cartodb.git
+ENV WINDSHAFT_REPO https://github.com/devloic/Windshaft-cartodb.git
 
 ARG WINDSHAFT_VERSION
 
