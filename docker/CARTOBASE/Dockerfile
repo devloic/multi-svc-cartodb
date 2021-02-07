@@ -132,7 +132,7 @@ RUN apt-get -qq update \
     postgresql-plpython3-12 \
     postgresql-12-plproxy \
     postgresql-12-postgis-3 \
-    postgresql-12-postgis-scripts \
+    postgresql-12-postgis-3-scripts \
     postgis \
     liblwgeom-2.4-0 \
     redis-server \
