@@ -129,7 +129,7 @@ RUN apt-get -qq update \
     postgresql-12 \
     postgresql-client-12 \
     postgresql-contrib-12 \
-    postgresql-plpython-12 \
+    postgresql-plpython3-12 \
     postgresql-12-plproxy \
     postgresql-12-postgis-3 \
     postgresql-12-postgis-scripts \
