@@ -51,6 +51,15 @@ RUN apt-get -qq update \
     libssl1.0.0 \
  && rm -rf /var/lib/apt/lists/*
 
+
+RUN apt-get -y install lsb-core
+
+# Create the file repository configuration:
+RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+# Import the repository signing key:
+RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+
 RUN apt-get -qq update \
  && echo "Installing development libraries..." \
  && apt-get install -y -q --no-install-recommends \
