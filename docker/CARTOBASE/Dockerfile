@@ -60,8 +60,8 @@ RUN apt-get -qq update \
     libjson-c-dev \
     libproj-dev \
     libgdal-dev \
-    postgresql-server-dev-10 \
-    python2.7-dev \
+    postgresql-server-dev-12 \
+    python3-dev \
     libmapnik-dev \
     python-all-dev \
     zlib1g-dev \
@@ -118,13 +118,13 @@ RUN apt-get -qq update \
  && echo "Installing database packages..." \
  && apt-get install -y -q --no-install-recommends \
     libpq5 \
-    postgresql-10 \
-    postgresql-client-10 \
-    postgresql-contrib-10 \
-    postgresql-plpython-10 \
-    postgresql-10-plproxy \
-    postgresql-10-postgis-2.4 \
-    postgresql-10-postgis-scripts \
+    postgresql-12 \
+    postgresql-client-12 \
+    postgresql-contrib-12 \
+    postgresql-plpython-12 \
+    postgresql-12-plproxy \
+    postgresql-12-postgis-3 \
+    postgresql-12-postgis-scripts \
     postgis \
     liblwgeom-2.4-0 \
     redis-server \
